@@ -1,0 +1,9 @@
+{
+  "extends": "@saberhq/tsconfig/tsconfig.mono.json",
+  "compilerOptions": {
+    "outDir": "dist/esm/",
+    "rootDir": "src/",
+    "types": ["node"]
+  },
+  "include": ["./src", "src/**/*.json", ".eslintrc.cjs"]
+}
