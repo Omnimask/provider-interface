@@ -49,7 +49,7 @@
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.1.4",
-    "@saberhq/eslint-config": "^1.13.30",
+    "@saberhq/eslint-config": "^2.0.1",
     "@saberhq/tsconfig": "^1.13.30",
     "@types/eslint": "^8.4.3",
     "@types/node": "^18.0.0",
