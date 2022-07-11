@@ -53,9 +53,12 @@ export type OmniRPCAPI = {
     };
     output: boolean;
   };
+  /**
+   * Get the state of the provider, returning null if the provider is not connected.
+   */
   [OmniRPC.GetProviderState]: {
     input: never;
-    output: ProviderState;
+    output: ProviderState | null;
   };
   [OmniRPC.ConnectWallet]: {
     input: never;
