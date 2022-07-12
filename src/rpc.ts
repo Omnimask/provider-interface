@@ -1,6 +1,7 @@
 import type {
   HexEncodedBytes,
   MultiAgentSignature,
+  OnChainTransaction,
   PendingTransaction,
   SubmitTransactionRequest,
   TransactionPayload,
@@ -43,6 +44,7 @@ export enum OmniRPC {
   RequestFaucet = "omni_requestFaucet",
   SignAndSendTransaction = "omni_signAndSendTransaction",
   SignAndSendRawTransaction = "omni_signAndSendRawTransaction",
+  SimulateTransaction = "omni_simulateTransaction",
 }
 
 export type OmniRPCAPI = {
@@ -83,6 +85,10 @@ export type OmniRPCAPI = {
   [OmniRPC.SignAndSendRawTransaction]: {
     input: SignAndSendRawTransactionParams;
     output: SignAndSendTransactionResult;
+  };
+  [OmniRPC.SimulateTransaction]: {
+    input: SimulateTransactionParams;
+    output: SimulateTransactionResult;
   };
 };
 
@@ -135,6 +141,26 @@ export type SignAndSendTransactionParams = {
       secondary_signers?: AccountObject[];
     }
   >;
+};
+
+/**
+ * Parameters for {@link OmniRPC.SimulateTransaction}.
+ */
+export type SimulateTransactionParams = {
+  /**
+   * The {@link UserTransactionRequest} being simulated.
+   */
+  request: UserTransactionRequest;
+};
+
+/**
+ * Result of {@link OmniRPC.SimulateTransaction}.
+ */
+export type SimulateTransactionResult = {
+  /**
+   * The {@link OnChainTransaction}s that would result from the simulation.
+   */
+  txs: OnChainTransaction[];
 };
 
 export type SignAndSendRawTransactionParams = {
