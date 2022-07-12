@@ -79,14 +79,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@movingco/aptos-api@npm:^0.1.44":
-  version: 0.1.44
-  resolution: "@movingco/aptos-api@npm:0.1.44"
+"@movingco/aptos-api@npm:^0.1.45":
+  version: 0.1.45
+  resolution: "@movingco/aptos-api@npm:0.1.45"
   dependencies:
     tslib: ^2.4.0
   peerDependencies:
     axios: ^0.27.2
-  checksum: 33d83fd4fd7c020ef2c24b53f37a5523c1f2eae3588cdf2edcbb1f26bac861cc54e5d5f2c306e91929e1c185cfca24daf1364ad31b6216237d5ddce37b248b3b
+  checksum: 5688f669e10232eb2db2f9a8b9af5f0228875c1818252317483c1e8acb52852161137660c79279eadb09083b98707b3bac16b3786ae80fbbd87cf1542fd61c7e
   languageName: node
   linkType: hard
 
@@ -121,10 +121,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@omnimask/provider-interface@workspace:."
   dependencies:
-    "@movingco/aptos-api": ^0.1.44
+    "@movingco/aptos-api": ^0.1.45
     "@rushstack/eslint-patch": ^1.1.4
-    "@saberhq/eslint-config": ^2.0.1
-    "@saberhq/tsconfig": ^2.0.1
+    "@saberhq/eslint-config": ^2.0.2
+    "@saberhq/tsconfig": ^2.0.2
     "@types/eslint": ^8.4.5
     "@types/node": ^18.0.3
     "@types/prettier": ^2.6.3
@@ -152,12 +152,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@saberhq/eslint-config@npm:^2.0.1":
-  version: 2.0.1
-  resolution: "@saberhq/eslint-config@npm:2.0.1"
+"@saberhq/eslint-config@npm:^2.0.2":
+  version: 2.0.2
+  resolution: "@saberhq/eslint-config@npm:2.0.2"
   dependencies:
-    "@typescript-eslint/eslint-plugin": ^5.30.0
-    "@typescript-eslint/parser": ^5.30.0
+    "@typescript-eslint/eslint-plugin": ^5.30.6
+    "@typescript-eslint/parser": ^5.30.6
     eslint-config-prettier: ^8.5.0
     eslint-import-resolver-node: ^0.3.6
     eslint-plugin-import: ^2.26.0
@@ -167,14 +167,14 @@ __metadata:
     prettier: ^2.7.1
   peerDependencies:
     eslint: ">=7"
-  checksum: 3a468e11a794972c4d3f1af0fbdeba161c520eca29f3741141dd0969a1e6b2c143cb5c31762b9f500169ab8a46cd69f89767f255780a6dbcee548c940ab75eb5
+  checksum: d5ca8160f173d10ec69a5363bcc43990e2e5ea753b23e5c5b860285868046c8ea98517ed201948fd37b04230661a5e5535b67e442567b3e25402efb8d4a26383
   languageName: node
   linkType: hard
 
-"@saberhq/tsconfig@npm:^2.0.1":
-  version: 2.0.1
-  resolution: "@saberhq/tsconfig@npm:2.0.1"
-  checksum: 6a57098dc2131f51915dba92c9ac2427a68da93733492e9ea8b92ebe6e35271de250551e0461065155d55c1dd0afa9904f60250268e84f3140d7b81fd87a1fd0
+"@saberhq/tsconfig@npm:^2.0.2":
+  version: 2.0.2
+  resolution: "@saberhq/tsconfig@npm:2.0.2"
+  checksum: 0b33eea8e68155b053a2a7c8562e55ae4e7b581be12ff129fe80df3103b7c09558192cee8b2afe56bc9eccef7867acaadd494bf016173085d08a0733cf96792d
   languageName: node
   linkType: hard
 
@@ -325,7 +325,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/eslint-plugin@npm:^5.30.0":
+"@typescript-eslint/eslint-plugin@npm:^5.30.6":
   version: 5.30.6
   resolution: "@typescript-eslint/eslint-plugin@npm:5.30.6"
   dependencies:
@@ -348,7 +348,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/parser@npm:^5.30.0":
+"@typescript-eslint/parser@npm:^5.30.6":
   version: 5.30.6
   resolution: "@typescript-eslint/parser@npm:5.30.6"
   dependencies:
