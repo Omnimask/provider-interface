@@ -5,6 +5,7 @@
   "repository": "git@github.com:Omnimask/provider-interface.git",
   "author": "Ian Macalinao <ian@moving.wtf>",
   "license": "AGPL-3.0",
+  "sideEffects": false,
   "type": "module",
   "exports": {
     ".": {
