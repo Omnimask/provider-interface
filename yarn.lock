@@ -79,14 +79,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@movingco/aptos-api@npm:^0.1.45":
-  version: 0.1.45
-  resolution: "@movingco/aptos-api@npm:0.1.45"
+"@movingco/aptos-api@npm:^0.1.47":
+  version: 0.1.47
+  resolution: "@movingco/aptos-api@npm:0.1.47"
   dependencies:
     tslib: ^2.4.0
   peerDependencies:
     axios: ^0.27.2
-  checksum: 5688f669e10232eb2db2f9a8b9af5f0228875c1818252317483c1e8acb52852161137660c79279eadb09083b98707b3bac16b3786ae80fbbd87cf1542fd61c7e
+  checksum: 140432348784d098b8298cd5ad3c147ade6c09a5df60a78a5e6dd458064a394ad4608c19349f849b7daf686a1e334e409ff584f496cdcc1bcb3c477f9a13b58e
   languageName: node
   linkType: hard
 
@@ -121,7 +121,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@omnimask/provider-interface@workspace:."
   dependencies:
-    "@movingco/aptos-api": ^0.1.45
+    "@movingco/aptos-api": ^0.1.47
     "@rushstack/eslint-patch": ^1.1.4
     "@saberhq/eslint-config": ^2.0.2
     "@saberhq/tsconfig": ^2.0.2
