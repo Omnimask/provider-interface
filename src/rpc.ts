@@ -7,7 +7,7 @@ import type {
   TransactionPayload,
   UserCreateSigningMessageRequest,
   UserTransactionRequest,
-} from "@movingco/aptos-api";
+} from "@aptosis/aptos-api";
 import type EventEmitter from "eventemitter3";
 import type { JsonRpcRequest } from "json-rpc-engine";
 
