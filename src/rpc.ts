@@ -131,7 +131,19 @@ export interface AccountObject {
   privateKeyHex: HexEncodedBytes;
 }
 
-export type SignAndSendTransactionParams = {
+/**
+ * Additional options when sending a transaction.
+ */
+export interface TXSendOptions {
+  /**
+   * If true, the transaction will not be confirmed when exiting the modal.
+   *
+   * Defaults to false.
+   */
+  skipConfirmation?: boolean;
+}
+
+export interface SignAndSendTransactionParams extends TXSendOptions {
   payload: TransactionPayload;
   options?: Partial<
     UserTransactionRequest & {
@@ -141,6 +153,31 @@ export type SignAndSendTransactionParams = {
       secondary_signers?: AccountObject[];
     }
   >;
+}
+
+export interface SignAndSendRawTransactionParams extends TXSendOptions {
+  /**
+   * The {@link UserCreateSigningMessageRequest} being signed.
+   */
+  request: UserCreateSigningMessageRequest;
+  /**
+   * The BCS-encoded signing message of the given transaction.
+   *
+   * This message is validated against the request.
+   */
+  message: HexEncodedBytes;
+  /**
+   * Additional signers for a multi-agent signature.
+   */
+  multi_agent_signature?: Pick<
+    MultiAgentSignature,
+    "secondary_signer_addresses" | "secondary_signers"
+  >;
+}
+
+export type SignAndSendTransactionResult = {
+  signedTX: SubmitTransactionRequest;
+  result: PendingTransaction;
 };
 
 /**
@@ -161,31 +198,6 @@ export type SimulateTransactionResult = {
    * The {@link OnChainTransaction}s that would result from the simulation.
    */
   txs: OnChainTransaction[];
-};
-
-export type SignAndSendRawTransactionParams = {
-  /**
-   * The {@link UserCreateSigningMessageRequest} being signed.
-   */
-  request: UserCreateSigningMessageRequest;
-  /**
-   * The BCS-encoded signing message of the given transaction.
-   *
-   * This message is validated against the request.
-   */
-  message: HexEncodedBytes;
-  /**
-   * Additional signers for a multi-agent signature.
-   */
-  multi_agent_signature?: Pick<
-    MultiAgentSignature,
-    "secondary_signer_addresses" | "secondary_signers"
-  >;
-};
-
-export type SignAndSendTransactionResult = {
-  signedTX: SubmitTransactionRequest;
-  result: PendingTransaction;
 };
 
 export type RequestFaucetParams = {
