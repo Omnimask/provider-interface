@@ -112,7 +112,7 @@ export type OmniEventType =
 /**
  * An in-page wallet provider.
  */
-export interface OmniProvider extends EventEmitter<OmniEventType> {
+export interface OmniProvider {
   /**
    * Event emitter.
    */
