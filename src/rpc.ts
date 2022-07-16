@@ -6,6 +6,7 @@ import type {
   SubmitTransactionRequest,
   TransactionPayload,
   UserCreateSigningMessageRequest,
+  UserTransaction,
   UserTransactionRequest,
 } from "@aptosis/aptos-api";
 import type EventEmitter from "eventemitter3";
@@ -147,11 +148,18 @@ export interface AccountObject {
  */
 export interface TXSendOptions {
   /**
-   * If true, the transaction will not be confirmed when exiting the modal.
+   * If true, the transaction will not wait for confirmation exiting the modal.
    *
    * Defaults to false.
    */
   skipConfirmation?: boolean;
+  /**
+   * If true, transaction errors will be captured in the wallet
+   * rather than being propagated to the dapp.
+   *
+   * Defaults to false.
+   */
+  showErrorsInWallet?: boolean;
 }
 
 export interface SignAndSendTransactionParams extends TXSendOptions {
@@ -189,6 +197,7 @@ export interface SignAndSendRawTransactionParams extends TXSendOptions {
 export type SignAndSendTransactionResult = {
   signedTX: SubmitTransactionRequest;
   result: PendingTransaction;
+  confirmed?: UserTransaction;
 };
 
 /**
