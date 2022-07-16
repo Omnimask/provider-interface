@@ -11,6 +11,7 @@ import type {
 import type EventEmitter from "eventemitter3";
 import type { JsonRpcRequest } from "json-rpc-engine";
 
+import type { Address } from "./constants.js";
 import type { Protocol, ProviderState } from "./index.js";
 
 /**
@@ -112,9 +113,19 @@ export type OmniEventType =
  * An in-page wallet provider.
  */
 export interface OmniProvider extends EventEmitter<OmniEventType> {
+  /**
+   * Event emitter.
+   */
+  readonly events: EventEmitter<OmniEventType>;
+
   request: <M extends OmniRPC>(
     req: OmniRPCParams<M>
   ) => Promise<OmniRPCResult<M>>;
+
+  /**
+   * Gets the currently selected account exposed to the provider.
+   */
+  get selectedAccount(): Address | null;
 }
 
 export type SignMessageParams = {
