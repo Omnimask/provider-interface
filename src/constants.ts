@@ -1,12 +1,9 @@
+import type { Address } from "./common.js";
+
 /**
  * The protocol of the connected network. This determines the way addresses are returned to the provider.
  */
 export type Protocol = "aptos" | "sui" | "solana" | "near";
-
-/**
- * Account address.
- */
-export type Address = string;
 
 /**
  * State of the provider.

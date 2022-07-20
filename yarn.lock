@@ -136,7 +136,6 @@ __metadata:
     json-rpc-engine: ^6.1.0
     lint-staged: ^13.0.3
     prettier: ^2.7.1
-    tiny-invariant: ^1.2.0
     tslib: ^2.4.0
     typedoc: ^0.23.8
     typescript: ^4.7.4
@@ -3769,13 +3768,6 @@ __metadata:
   version: 2.3.8
   resolution: "through@npm:2.3.8"
   checksum: a38c3e059853c494af95d50c072b83f8b676a9ba2818dcc5b108ef252230735c54e0185437618596c790bbba8fcdaef5b290405981ffa09dce67b1f1bf190cbd
-  languageName: node
-  linkType: hard
-
-"tiny-invariant@npm:^1.2.0":
-  version: 1.2.0
-  resolution: "tiny-invariant@npm:1.2.0"
-  checksum: e09a718a7c4a499ba592cdac61f015d87427a0867ca07f50c11fd9b623f90cdba18937b515d4a5e4f43dac92370498d7bdaee0d0e7a377a61095e02c4a92eade
   languageName: node
   linkType: hard
 

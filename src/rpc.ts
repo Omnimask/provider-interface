@@ -9,29 +9,9 @@ import type {
   UserTransaction,
   UserTransactionRequest,
 } from "@aptosis/aptos-api";
-import type EventEmitter from "eventemitter3";
 import type { JsonRpcRequest } from "json-rpc-engine";
 
-import type { Address } from "./constants.js";
-import type { Protocol, ProviderState } from "./index.js";
-
-/**
- * Information about an account (keypair) managed by the wallet.
- */
-export interface AccountInfo {
-  /**
-   * Name of the account.
-   */
-  name: string;
-  /**
-   * Normalized address of the account.
-   */
-  address: string;
-  /**
-   * Protocol of the account.
-   */
-  protocol: Protocol;
-}
+import type { ProviderState } from "./index.js";
 
 /**
  * Wallet RPC request.
@@ -103,32 +83,6 @@ export type OmniRPCParams<M extends OmniRPC> = Omit<
 
 export type OmniRPCResult<M extends OmniRPC> = OmniRPCAPI[M]["output"];
 
-export type OmniEventType =
-  | "connect"
-  | "disconnect"
-  | "accountsChanged"
-  | "networkChanged"
-  | "unlockStateChanged";
-
-/**
- * An in-page wallet provider.
- */
-export interface OmniProvider {
-  /**
-   * Event emitter.
-   */
-  readonly events: EventEmitter<OmniEventType>;
-
-  request: <M extends OmniRPC>(
-    req: OmniRPCParams<M>
-  ) => Promise<OmniRPCResult<M>>;
-
-  /**
-   * Gets the currently selected account exposed to the provider.
-   */
-  get selectedAccount(): Address | null;
-}
-
 export type SignMessageParams = {
   data: string;
 };
@@ -136,12 +90,6 @@ export type SignMessageParams = {
 export type SignMessageResult = {
   signature: string;
 };
-
-export interface AccountObject {
-  address?: string;
-  publicKeyHex?: HexEncodedBytes;
-  privateKeyHex: HexEncodedBytes;
-}
 
 /**
  * Additional options when sending a transaction.
@@ -164,13 +112,13 @@ export interface TXSendOptions {
 
 export interface SignAndSendTransactionParams extends TXSendOptions {
   payload: TransactionPayload;
-  options?: Partial<
-    UserTransactionRequest & {
-      /**
-       * Additional signers.
-       */
-      secondary_signers?: AccountObject[];
-    }
+  options?: Partial<UserTransactionRequest>;
+  /**
+   * Additional signers for a multi-agent signature.
+   */
+  multi_agent_signature?: Pick<
+    MultiAgentSignature,
+    "secondary_signer_addresses" | "secondary_signers"
   >;
 }
 

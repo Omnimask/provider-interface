@@ -1,7 +1,6 @@
 {
   "extends": "@saberhq/tsconfig/tsconfig.mono.json",
   "compilerOptions": {
-    "types": ["node"],
     "noEmit": true
   },
   "include": ["./src", "src/**/*.json", ".eslintrc.cjs"]
