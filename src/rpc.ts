@@ -228,10 +228,3 @@ export type RequestFaucetParams = {
 export type RequestFaucetResult = {
   txs: string[];
 };
-
-export interface DappRequestContext {
-  dappName: string;
-  icon: string | null;
-  origin: string;
-  wallet: AccountInfo | null;
-}
