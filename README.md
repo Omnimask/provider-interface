@@ -9,4 +9,4 @@ Interface for an Omnimask-compatible provider.
 
 ## License
 
-Omnimask is licensed under the Affero General Public License, version 3.
+Omnimask's provider interface is licensed under the Apache License, version 2.0.
