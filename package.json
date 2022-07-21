@@ -65,7 +65,7 @@
     "typescript": "^4.7.4"
   },
   "dependencies": {
-    "@aptosis/aptos-api": "^0.0.6",
+    "@aptosis/aptos-api": "^0.0.8",
     "eventemitter3": "^4.0.7",
     "json-rpc-engine": "^6.1.0",
     "tslib": "^2.4.0"
