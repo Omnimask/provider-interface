@@ -5,37 +5,37 @@ __metadata:
   version: 6
   cacheKey: 8
 
-"@aptosis/aptos-api@npm:^0.0.11":
-  version: 0.0.11
-  resolution: "@aptosis/aptos-api@npm:0.0.11"
+"@aptosis/aptos-api@npm:^0.1.0":
+  version: 0.1.0
+  resolution: "@aptosis/aptos-api@npm:0.1.0"
   dependencies:
-    "@aptosis/aptos-data-contracts": ^0.0.11
+    "@aptosis/aptos-data-contracts": ^0.1.0
     tslib: ^2.4.0
   peerDependencies:
     axios: ^0.27
-  checksum: c3e9aa505c8700c8845d80e0f87e81efeb81e7d8aeef48e7140cad143a813e4bfb3200099da356a16d8d01ca55a74559a6f78e2a2398b38045ba8fceb7eeb416
+  checksum: e2109d8847c2e182df36058864674646b195dbd3e534858be3b2d1f5c64444a45df915a34ed6e3d437938cea1bbe45e66ffcfac7d36074a51460bb4e71b62dc6
   languageName: node
   linkType: hard
 
-"@aptosis/aptos-data-contracts@npm:^0.0.11":
-  version: 0.0.11
-  resolution: "@aptosis/aptos-data-contracts@npm:0.0.11"
+"@aptosis/aptos-data-contracts@npm:^0.1.0":
+  version: 0.1.0
+  resolution: "@aptosis/aptos-data-contracts@npm:0.1.0"
   dependencies:
     tslib: ^2.4.0
-  checksum: 8aa3cfdd14e6167f0d8aa826317c1425dc6dd5d67871593242cfc390d8931e6f50b2f96544304da999ed0e5527d75f232120fe5ffe949705bbeb6133d38d5dbc
+  checksum: 62ec2fe2242e6c441dcf61b78e37147734a88d6bb00197c54bdc7cb9ea94373136ecacfcafbcc8bb42d5b95f8bf276f4f5d03f2dc20d42185d13c7d5719b6553
   languageName: node
   linkType: hard
 
-"@aptosis/aptos-typed-api@npm:^0.0.11":
-  version: 0.0.11
-  resolution: "@aptosis/aptos-typed-api@npm:0.0.11"
+"@aptosis/aptos-typed-api@npm:^0.1.0":
+  version: 0.1.0
+  resolution: "@aptosis/aptos-typed-api@npm:0.1.0"
   dependencies:
-    "@aptosis/aptos-api": ^0.0.11
-    "@movingco/move-types": ^0.2.0
+    "@aptosis/aptos-api": ^0.1.0
+    "@movingco/move-types": ^0.3.0
     tslib: ^2.4.0
   peerDependencies:
     axios: ^0.27
-  checksum: cc42f1b1ebea9b95a1e9028bce8cbffd7d52f2df9edd18db9d93d50fe2289ebe72d75049d0ee15b5280416e5bca9449587367159c3dfc1b9019f0f32524c704c
+  checksum: 9ef5f248f0c63e28ed1f4d5733df0f193d0aa03594b5e79843b64d0894d0ba1a9e112972753b34c51589dd9bbbca515200c6d5b34595b3a1c75f20e8697a02e6
   languageName: node
   linkType: hard
 
@@ -113,12 +113,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@movingco/move-types@npm:^0.2.0":
-  version: 0.2.0
-  resolution: "@movingco/move-types@npm:0.2.0"
+"@movingco/move-types@npm:^0.3.0":
+  version: 0.3.0
+  resolution: "@movingco/move-types@npm:0.3.0"
   dependencies:
     tslib: ^2.4.0
-  checksum: b265e978f252775ab9b6ecbb7fc41e904fab26ba7a2f842580dbe842feb80c5b1136c32bdec698743d57d1e6861bf497a56bb6a1475f1d5f800f1f00fbc9659a
+  checksum: e3071d8910500cd770f38538b2a8f98915ca79653f6e355814956b9c0272a23c1ad944a8f4a367d52d6ce68e1e76fe7e44c0c86753daeb24a023080afe88997d
   languageName: node
   linkType: hard
 
@@ -153,8 +153,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@omnimask/provider-interface@workspace:."
   dependencies:
-    "@aptosis/aptos-api": ^0.0.11
-    "@aptosis/aptos-typed-api": ^0.0.11
+    "@aptosis/aptos-api": ^0.1.0
+    "@aptosis/aptos-typed-api": ^0.1.0
     "@rushstack/eslint-patch": ^1.1.4
     "@saberhq/eslint-config": ^2.0.3
     "@saberhq/tsconfig": ^2.0.3
