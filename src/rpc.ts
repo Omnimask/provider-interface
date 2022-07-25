@@ -1,14 +1,17 @@
 import type {
-  HexEncodedBytes,
   MultiAgentSignature,
   OnChainTransaction,
+} from "@aptosis/aptos-api";
+import type {
+  ByteStringHex,
   PendingTransaction,
   SubmitTransactionRequest,
   TransactionPayload,
+  TransactionPayloadType,
   UserCreateSigningMessageRequest,
   UserTransaction,
   UserTransactionRequest,
-} from "@aptosis/aptos-api";
+} from "@aptosis/aptos-typed-api";
 import type { JsonRpcRequest } from "json-rpc-engine";
 
 import type { ProviderState } from "./index.js";
@@ -32,7 +35,13 @@ export enum OmniRPC {
 export type OmniRPCAPI = {
   [OmniRPC.SendSiteMetadata]: {
     input: {
+      /**
+       * The name of the site.
+       */
       name: string;
+      /**
+       * An icon associated with the site.
+       */
       icon: string | null;
     };
     output: boolean;
@@ -110,13 +119,15 @@ export interface TXSendOptions {
   showErrorsInWallet?: boolean;
 }
 
-export interface SignAndSendTransactionParams extends TXSendOptions {
-  payload: TransactionPayload;
-  options?: Partial<UserTransactionRequest>;
+export interface SignAndSendTransactionParams<
+  TPayloadType extends TransactionPayloadType = TransactionPayloadType
+> extends TXSendOptions {
+  readonly payload: TransactionPayload<TPayloadType>;
+  readonly options?: Partial<Omit<UserTransactionRequest, "payload">>;
   /**
    * Additional signers for a multi-agent signature.
    */
-  multi_agent_signature?: Pick<
+  readonly multi_agent_signature?: Pick<
     MultiAgentSignature,
     "secondary_signer_addresses" | "secondary_signers"
   >;
@@ -126,27 +137,30 @@ export interface SignAndSendRawTransactionParams extends TXSendOptions {
   /**
    * The {@link UserCreateSigningMessageRequest} being signed.
    */
-  request: UserCreateSigningMessageRequest;
+  readonly request: UserCreateSigningMessageRequest;
   /**
    * The BCS-encoded signing message of the given transaction.
    *
    * This message is validated against the request.
    */
-  message: HexEncodedBytes;
+  readonly message: ByteStringHex;
   /**
    * Additional signers for a multi-agent signature.
    */
-  multi_agent_signature?: Pick<
+  readonly multi_agent_signature?: Pick<
     MultiAgentSignature,
     "secondary_signer_addresses" | "secondary_signers"
   >;
 }
 
-export type SignAndSendTransactionResult = {
-  signedTX: SubmitTransactionRequest;
-  result: PendingTransaction;
-  confirmed?: UserTransaction;
-};
+export interface SignAndSendTransactionResult {
+  readonly signedTX: SubmitTransactionRequest;
+  readonly result: PendingTransaction;
+  /**
+   * The confirmed {@link UserTransaction}. This is only returned if {@link TXSendOptions#skipConfirmation} is not `false`.
+   */
+  readonly confirmed?: UserTransaction;
+}
 
 /**
  * Parameters for {@link OmniRPC.SimulateTransaction}.

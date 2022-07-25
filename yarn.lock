@@ -5,14 +5,37 @@ __metadata:
   version: 6
   cacheKey: 8
 
-"@aptosis/aptos-api@npm:^0.0.9":
-  version: 0.0.9
-  resolution: "@aptosis/aptos-api@npm:0.0.9"
+"@aptosis/aptos-api@npm:^0.0.11":
+  version: 0.0.11
+  resolution: "@aptosis/aptos-api@npm:0.0.11"
   dependencies:
+    "@aptosis/aptos-data-contracts": ^0.0.11
     tslib: ^2.4.0
   peerDependencies:
-    axios: ^0.27.2
-  checksum: 81ea379a7e985cc904169ade68118a71518050077a8434eb1a5d5c01a1c84043251f23cc6803977b4bc91b732ce95954763ba44e67126b152505b64493c6d463
+    axios: ^0.27
+  checksum: c3e9aa505c8700c8845d80e0f87e81efeb81e7d8aeef48e7140cad143a813e4bfb3200099da356a16d8d01ca55a74559a6f78e2a2398b38045ba8fceb7eeb416
+  languageName: node
+  linkType: hard
+
+"@aptosis/aptos-data-contracts@npm:^0.0.11":
+  version: 0.0.11
+  resolution: "@aptosis/aptos-data-contracts@npm:0.0.11"
+  dependencies:
+    tslib: ^2.4.0
+  checksum: 8aa3cfdd14e6167f0d8aa826317c1425dc6dd5d67871593242cfc390d8931e6f50b2f96544304da999ed0e5527d75f232120fe5ffe949705bbeb6133d38d5dbc
+  languageName: node
+  linkType: hard
+
+"@aptosis/aptos-typed-api@npm:^0.0.11":
+  version: 0.0.11
+  resolution: "@aptosis/aptos-typed-api@npm:0.0.11"
+  dependencies:
+    "@aptosis/aptos-api": ^0.0.11
+    "@movingco/move-types": ^0.2.0
+    tslib: ^2.4.0
+  peerDependencies:
+    axios: ^0.27
+  checksum: cc42f1b1ebea9b95a1e9028bce8cbffd7d52f2df9edd18db9d93d50fe2289ebe72d75049d0ee15b5280416e5bca9449587367159c3dfc1b9019f0f32524c704c
   languageName: node
   linkType: hard
 
@@ -90,6 +113,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@movingco/move-types@npm:^0.2.0":
+  version: 0.2.0
+  resolution: "@movingco/move-types@npm:0.2.0"
+  dependencies:
+    tslib: ^2.4.0
+  checksum: b265e978f252775ab9b6ecbb7fc41e904fab26ba7a2f842580dbe842feb80c5b1136c32bdec698743d57d1e6861bf497a56bb6a1475f1d5f800f1f00fbc9659a
+  languageName: node
+  linkType: hard
+
 "@nodelib/fs.scandir@npm:2.1.5":
   version: 2.1.5
   resolution: "@nodelib/fs.scandir@npm:2.1.5"
@@ -121,7 +153,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@omnimask/provider-interface@workspace:."
   dependencies:
-    "@aptosis/aptos-api": ^0.0.9
+    "@aptosis/aptos-api": ^0.0.11
+    "@aptosis/aptos-typed-api": ^0.0.11
     "@rushstack/eslint-patch": ^1.1.4
     "@saberhq/eslint-config": ^2.0.3
     "@saberhq/tsconfig": ^2.0.3
