@@ -1,4 +1,5 @@
 import type {
+  HexEncodedBytes,
   MultiAgentSignature,
   OnChainTransaction,
 } from "@aptosis/aptos-api";
@@ -165,22 +166,22 @@ export interface SignAndSendTransactionResult {
 /**
  * Parameters for {@link OmniRPC.SimulateTransaction}.
  */
-export type SimulateTransactionParams = {
+export interface SimulateTransactionParams {
   /**
    * The {@link UserTransactionRequest} being simulated.
    */
   request: UserTransactionRequest;
-};
+}
 
 /**
  * Result of {@link OmniRPC.SimulateTransaction}.
  */
-export type SimulateTransactionResult = {
+export interface SimulateTransactionResult {
   /**
    * The {@link OnChainTransaction}s that would result from the simulation.
    */
   txs: OnChainTransaction[];
-};
+}
 
 export type RequestFaucetParams = {
   address: string;
@@ -188,5 +189,5 @@ export type RequestFaucetParams = {
 };
 
 export type RequestFaucetResult = {
-  txs: string[];
+  txs: HexEncodedBytes[];
 };
