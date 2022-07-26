@@ -92,13 +92,13 @@ export type OmniRPCParams<M extends OmniRPC> = Omit<
 
 export type OmniRPCResult<M extends OmniRPC> = OmniRPCAPI[M]["output"];
 
-export type SignMessageParams = {
+export interface SignMessageParams {
   data: string;
-};
+}
 
-export type SignMessageResult = {
+export interface SignMessageResult {
   signature: string;
-};
+}
 
 /**
  * Additional options when sending a transaction.
