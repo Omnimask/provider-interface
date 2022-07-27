@@ -56,7 +56,10 @@ export type OmniRPCAPI = {
   };
   [OmniRPC.ConnectWallet]: {
     input: never;
-    output: boolean;
+    /**
+     * Returns the {@link ProviderState} if successful; otherwise returns null.
+     */
+    output: ProviderState | null;
   };
   [OmniRPC.DisconnectWallet]: {
     input: never;
