@@ -6,17 +6,25 @@ import type { AccountKeys, Address } from "./common.js";
 export type Protocol = "aptos" | "sui" | "solana" | "near";
 
 /**
+ * An account exposed to the provider.
+ */
+export type ProviderAccount = AccountKeys & {
+  readonly protocol: "aptos";
+};
+
+/**
  * State of the provider as viewable by a dapp.
  */
 export interface ProviderState {
   /**
    * The currently active account, or null if it doesn't exist.
    */
-  readonly currentAccount:
-    | ({
-        protocol: "aptos";
-      } & AccountKeys)
-    | null;
+  readonly currentAccount: ProviderAccount | null;
+
+  /**
+   * All accounts exposed to the dapp.
+   */
+  readonly accounts: readonly ProviderAccount[] | null;
 
   selectedAccount: Address | null;
 
@@ -24,8 +32,6 @@ export interface ProviderState {
     chainId: string;
     protocol: Protocol;
   } | null;
-
-  accounts: readonly Address[] | null;
 
   isConnected: boolean;
   isUnlocked: boolean;
